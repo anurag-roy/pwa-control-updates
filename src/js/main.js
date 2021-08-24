@@ -4,7 +4,7 @@ if ('serviceWorker' in navigator)
 {
 	navigator.serviceWorker.register('./sw.js');
 }
-let url = 'https://arca-survey-assets-dev.s3.amazonaws.com/0067a00000K1aZtAAJ-9-1627383867127/SampleZIPFile_30mbmb.zip';
+let url = 'https://arca-survey-assets-dev.s3.amazonaws.com/test/SampleZIPFile_30mbmb.zip';
 
 function generateLink(isBlank)
 {
