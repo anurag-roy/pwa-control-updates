@@ -14,8 +14,12 @@ html,
 
 /* Center the content in the browser window */
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
   margin: auto;
-  text-align: center;
 }
 
 .title {

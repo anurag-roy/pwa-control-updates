@@ -2,17 +2,26 @@
 
 if ('serviceWorker' in navigator)
 {
-  navigator.serviceWorker.register('./sw.js');
+	navigator.serviceWorker.register('./sw.js');
+}
+let url = 'https://arca-survey-assets-dev.s3.amazonaws.com/0067a00000K1aZtAAJ-9-1627383867127/SampleZIPFile_30mbmb.zip';
+
+function generateLink(isBlank)
+{
+	let element = document.createElement('a');
+	element.style.display = 'none';
+	element.setAttribute('href', url);
+	if (isBlank)
+	{
+		element.setAttribute('target', '_blank');
+	}
+
+	document.body.appendChild(element);
+	element.click();
+	document.body.removeChild(element);
 }
 
-window.onload = () =>
+function openWindow(isBlank)
 {
-  // navigator.serviceWorker.addEventListener('message', (event) => {
-  //   // event is a MessageEvent object
-  //   console.log('Service worker sent message event', event);
-  //   console.log(`The service worker sent me a message: ${event.data}`);
-  // });
-  // navigator.serviceWorker.ready.then((registration) => {
-  //   registration.active.postMessage('Hi service worker');
-  // });
-};
+	window.open(url, isBlank ? '_blank' : '_self');
+}
